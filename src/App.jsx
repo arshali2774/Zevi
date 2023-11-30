@@ -1,7 +1,15 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Homepage from './pages/Homepage/Homepage';
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Homepage />,
+    },
+  ]);
   return (
     <>
-      <h1>Zeni</h1>
+      <RouterProvider router={router} />
     </>
   );
 }
