@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './Search_bar.scss';
 import { CiSearch } from 'react-icons/ci';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { searchTextChange } from '../../slice/Homepage/Homepage';
 import { Form, Navigate } from 'react-router-dom';
 import { searchProduct } from '../../slice/SearchResult/SearchResult';
 const Search_bar = ({ show, hide }) => {
   //local state
   const [localSearch, setLocalSearch] = useState('');
+  //on reload
+
   //dispatch
   const dispatch = useDispatch();
   const debounce = () => {

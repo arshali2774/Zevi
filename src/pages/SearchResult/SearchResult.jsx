@@ -84,48 +84,13 @@ const SearchResult = () => {
             <hr />
             <Accordion
               question='PRICE RANGE'
-              answer={['Under 500', '1000 to 3000']}
+              answer={['Under 200', '200 to 1000']}
             />
             <hr />
             <Accordion
               question='Ratings'
-              answer={[
-                [
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                ],
-                [
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStarOutline />,
-                ],
-                [
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStarOutline />,
-                  <IoIosStarOutline />,
-                ],
-                [
-                  <IoIosStar color='gold' />,
-                  <IoIosStar color='gold' />,
-                  <IoIosStarOutline />,
-                  <IoIosStarOutline />,
-                  <IoIosStarOutline />,
-                ],
-                [
-                  <IoIosStar color='gold' />,
-                  <IoIosStarOutline />,
-                  <IoIosStarOutline />,
-                  <IoIosStarOutline />,
-                  <IoIosStarOutline />,
-                ],
-              ]}
+              answer={[5, 4, 3, 2, 1]}
+              stars={true}
             />
           </aside>
           <div className='search_gallery'>
