@@ -25,6 +25,14 @@
     p {
       font-size: 15px;
     }
+    .popular_btn {
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      &:hover {
+        color: brown;
+      }
+    }
   }
   .suggestion_box--trends {
     margin-bottom: 2rem;

@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Homepage from './pages/Homepage/Homepage';
+import SearchResult from './pages/SearchResult/SearchResult';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
@@ -9,6 +10,10 @@ function App() {
     {
       path: '/',
       element: <Homepage />,
+    },
+    {
+      path: '/result',
+      element: <SearchResult />,
     },
   ]);
   return (

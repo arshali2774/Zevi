@@ -8,6 +8,7 @@ const Card = ({ imgName, image }) => {
         alt={imgName}
       />
       <p>{imgName}</p>
+      <button className='product_btn'>View Product</button>
     </div>
   );
 };

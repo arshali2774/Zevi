@@ -5,7 +5,11 @@
   justify-content: space-between;
   width: 15%;
   height: 250px;
-
+  cursor: pointer;
+  position: relative;
+  &:hover .product_btn {
+    opacity: 1;
+  }
   img {
     width: 100%;
     height: 90%;
@@ -18,5 +22,17 @@
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .product_btn {
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(109, 132, 255, 0.71);
+    color: white;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    bottom: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
   }
 }
