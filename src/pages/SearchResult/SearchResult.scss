@@ -1,7 +1,6 @@
 .search_result {
   width: 100%;
   min-height: 100vh;
-  background-color: #f2f2f2;
   nav {
     width: 100%;
     display: grid;
@@ -34,10 +33,53 @@
     }
   }
   main {
-    background-color: red;
     padding: 0.5rem 2rem;
+    height: calc(100vh - 50px - 32px);
     h1 {
       font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .search_main {
+      display: flex;
+      height: calc(100% - 48px);
+      padding-bottom: 0.5rem;
+      gap: 1rem;
+      .search_filters {
+        flex-basis: 250px;
+        flex-shrink: 0;
+        hr {
+          background-color: rgba($color: #000000, $alpha: 0.4);
+          border-top: 1px;
+          margin-block: 1rem;
+        }
+      }
+      .search_gallery {
+        height: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        width: 100%;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        -ms-overflow-style: none;
+        .product_card {
+          width: 100%;
+          height: fit-content;
+          .product_btn {
+            bottom: 80px;
+            font-size: 20px;
+          }
+          .product_img_name {
+            flex-shrink: 0;
+          }
+          p {
+            padding-inline: 5px;
+          }
+        }
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
     }
   }
 }

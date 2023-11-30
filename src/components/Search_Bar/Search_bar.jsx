@@ -3,6 +3,8 @@ import './Search_bar.scss';
 import { CiSearch } from 'react-icons/ci';
 import { useMemo, useState } from 'react';
 import { searchTextChange } from '../../slice/Homepage/Homepage';
+import { Form, Navigate } from 'react-router-dom';
+import { searchProduct } from '../../slice/SearchResult/SearchResult';
 const Search_bar = ({ show, hide }) => {
   //local state
   const [localSearch, setLocalSearch] = useState('');
@@ -16,13 +18,16 @@ const Search_bar = ({ show, hide }) => {
       timeoutID = setTimeout(() => {
         const value = e.target.value;
         dispatch(searchTextChange({ value }));
+        dispatch(searchProduct(value));
       }, 1000);
     };
   };
   const optimizedDebounce = useMemo(() => debounce(), []);
-
   return (
-    <div className='search_bar'>
+    <Form
+      className='search_bar'
+      action='/result'
+    >
       <input
         type='text'
         placeholder='Search'
@@ -33,10 +38,13 @@ const Search_bar = ({ show, hide }) => {
         onChange={optimizedDebounce}
         value={localSearch}
       />
-      <button className='search_bar--btn'>
+      <button
+        className='search_bar--btn'
+        type='submit'
+      >
         <CiSearch className='search_bar--icon' />
       </button>
-    </div>
+    </Form>
   );
 };
 export default Search_bar;

@@ -3,6 +3,7 @@ import Card from '../Card/Card';
 import './Search_sugg.scss';
 
 const Search_sugg = ({ data, inputFocus }) => {
+  console.log(data);
   return (
     <AnimatePresence>
       {inputFocus && (
@@ -15,7 +16,7 @@ const Search_sugg = ({ data, inputFocus }) => {
           <div className='suggestion_box suggestion_box--trends'>
             <h2>Latest Trends</h2>
             <div className='suggestion_box--content'>
-              {data?.data.map((item) => (
+              {data?.data?.map((item) => (
                 <Card
                   image={item.image}
                   imgName={item.title}
@@ -27,7 +28,7 @@ const Search_sugg = ({ data, inputFocus }) => {
           <div className='suggestion_box suggestion_box--popular'>
             <h2>Popular Suggestion</h2>
             <ul>
-              {data?.data.map((item) => (
+              {data?.data?.map((item) => (
                 <li key={item.title}>
                   <button className='popular_btn'>{item.title}</button>
                 </li>

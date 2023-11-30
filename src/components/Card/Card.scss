@@ -10,13 +10,17 @@
   &:hover .product_btn {
     opacity: 1;
   }
-  img {
-    width: 100%;
-    height: 90%;
-    object-fit: contain;
-    border-radius: 10px;
+  .product_img {
+    height: 220px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
   }
-  p {
+
+  .product_img_name {
     font-size: 12px;
     white-space: nowrap;
     width: 100%;
@@ -34,5 +38,44 @@
     bottom: 20px;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
+  }
+  .heart-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: #f2f2f2;
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .product_price {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    .price_old {
+      font-size: 18px;
+      font-weight: 400;
+      text-decoration: line-through;
+      color: rgba(0, 0, 0, 0.4);
+    }
+    .price_new {
+      font-size: 18px;
+      font-weight: 600;
+      color: #6d84ff;
+    }
+  }
+  .product_rating {
+    display: flex;
+    gap: 0.5rem;
+    .rating_stars {
+      display: flex;
+      gap: 5px;
+    }
+    .rating_count {
+      font-size: 12px;
+    }
   }
 }
