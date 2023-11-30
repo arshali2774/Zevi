@@ -3,6 +3,7 @@ import Homepage from './pages/Homepage/Homepage';
 import SearchResult, { searchLoader } from './pages/SearchResult/SearchResult';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { useDispatch } from 'react-redux';
+import SinglePage from './pages/SinglePage/SinglePage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,10 @@ function App() {
       path: '/result',
       element: <SearchResult />,
       loader: searchLoader(queryClient, dispatch),
+    },
+    {
+      path: '/single/:productId',
+      element: <SinglePage />,
     },
   ]);
   return (

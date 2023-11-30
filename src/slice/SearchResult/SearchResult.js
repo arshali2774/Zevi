@@ -4,7 +4,7 @@ const initialState = {
   allProducts: [],
   filteredProducts: [],
   allCategories: [],
-  checkBox: {},
+  // singleProduct: [],
 };
 
 const searchResultSlice = createSlice({
@@ -51,6 +51,13 @@ const searchResultSlice = createSlice({
         });
       }
     },
+    // fetchSingleProduct: (state, { payload }) => {
+    //   const productId = Number(payload);
+    //   const filteredProducts = state.filteredProducts.filter(
+    //     (i) => i.id === productId
+    //   );
+    //   state.singleProduct = [...filteredProducts];
+    // },
   },
 });
 
@@ -59,5 +66,6 @@ export const {
   searchProduct,
   storeAllCategories,
   filterProducts,
+  // fetchSingleProduct,
 } = searchResultSlice.actions;
 export default searchResultSlice.reducer;

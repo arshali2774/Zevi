@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Card.scss';
 import { FaRegHeart, FaHeart } from 'react-icons/fa6';
 import { IoIosStar, IoIosStarHalf } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 const Card = ({
   imgName,
   image,
@@ -9,12 +10,17 @@ const Card = ({
   price = 0,
   rate = 0,
   count = 0,
+  productId,
 }) => {
+  const navigate = useNavigate();
   //heart state
   const [isHeart, setIsHeart] = useState(false);
   // handle change
   const handleHeartBtn = () => {
     setIsHeart(!isHeart);
+  };
+  const handleViewProduct = (pdtID) => {
+    navigate(`/single/${pdtID}`);
   };
   // stars math
   const fullStars = Math.floor(rate);
@@ -59,7 +65,12 @@ const Card = ({
           <p className='rating_count'>({count})</p>
         </div>
       )}
-      <button className='product_btn'>View Product</button>
+      <button
+        className='product_btn'
+        onClick={() => handleViewProduct(productId)}
+      >
+        View Product
+      </button>
       {isResultPage && (
         <button
           className='heart-btn'

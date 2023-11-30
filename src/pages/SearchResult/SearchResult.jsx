@@ -104,6 +104,7 @@ const SearchResult = () => {
                   price={item.price}
                   rate={item.rating.rate}
                   count={item.rating.count}
+                  productId={item.id}
                 />
               );
             })}

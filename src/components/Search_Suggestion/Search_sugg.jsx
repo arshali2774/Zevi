@@ -21,6 +21,7 @@ const Search_sugg = ({ data, inputFocus }) => {
                   image={item.image}
                   imgName={item.title}
                   key={item.id}
+                  productId={item.id}
                 />
               ))}
             </div>
